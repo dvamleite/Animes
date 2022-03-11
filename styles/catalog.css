@@ -1,0 +1,35 @@
+.card-content{
+    width: 100%;
+    
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+
+    margin: 1rem;
+    padding: .5rem;
+}
+
+.box-content{   
+ display: flex;
+ flex-wrap: wrap; 
+ margin: auto; 
+}
+
+.box-content img{    
+    width: 200px;
+    height: 200px;
+}
+
+.box-content li{
+    list-style: none;  
+    margin: .5rem;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.box-content span{
+    text-align: center;
+    font-size: 1.2rem;      
+}

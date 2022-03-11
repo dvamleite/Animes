@@ -1,0 +1,21 @@
+.contentMenu{
+    width: 100%;
+    height: 60px;
+
+    background-color: blueviolet;
+
+    display: flex;
+    align-items: center;
+}
+
+.contentMenu li{
+    margin: 1rem;
+    color: aliceblue;
+    list-style: none;
+
+    font-size: 1.5rem;
+}
+
+.contentMenu li:hover{
+    color: darkorange;
+}
