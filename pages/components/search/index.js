@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
-
-const Search = ({value, onChange}) => {
-    const[displayValue, setDisplayValue] = useState(value);    
+const SearchInput = ({value, onChange}) => {
 
     function handleChange(event){
-        setDisplayValue(event.target.value);        
+        onChange(event.target.value)
     }
 
     return(
@@ -13,10 +11,10 @@ const Search = ({value, onChange}) => {
         className="boxtext"
         placeholder="Search"       
         type="search"
-        value={displayValue}
+        value={value}
         onChange={handleChange}
         />
     )
 }
 
-export default Search;
+export default SearchInput;

@@ -21,15 +21,15 @@
 }
 
 .box-content li{
+    width: 250px;
     list-style: none;  
     margin: .5rem;
     padding: .5rem;
     display: flex;
     flex-direction: column;
-
 }
 
 .box-content span{
     text-align: center;
-    font-size: 1.2rem;      
+    font-size: min(22px, 10vw);      
 }
