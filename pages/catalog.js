@@ -5,7 +5,7 @@ import Link from 'next/link'
 const api = `https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0`
 
 
-export default function Catalog(props) {
+export default function Catalog() {
   const [animes, setAnimes] = useState({})
 
   useEffect(() =>{
