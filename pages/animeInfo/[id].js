@@ -20,7 +20,6 @@ export default function PageInfo() {
   return (
   <>
   <Menu />
-
   <div className="card-content">       
        {animes.data && (          
           <ul className='box-content'>

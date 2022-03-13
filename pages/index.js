@@ -24,12 +24,8 @@ export default function Home() {
       }
   },[text])
 
-
   return (
-  <>
-  
-
-  
+  <>  
   <Menu />
         <Head>
           <title>Animes Catalog</title>
@@ -50,13 +46,13 @@ export default function Home() {
              {info.data && (
                        <ul className="box-content">                    
                           {info.data.map((anime) =>(
-                             // <Link href={`../animeInfo/${anime.id - 1}`}>
-                                  <li key={anime.id}>                                   
-                                      <img src={anime.attributes.posterImage.small} 
-                                      alt={anime.attributes.canonicalTitle} />
-                                      <h3>{anime.attributes.canonicalTitle}</h3>
+                              <Link key={anime.id} href={`../animeInfo/${anime.id - 1}`}>
+                                  <li key={anime.id}>
+                                        <img src={anime.attributes.posterImage.small} 
+                                        alt={anime.attributes.canonicalTitle} />
+                                        <h3>{anime.attributes.canonicalTitle}</h3>                                    
                                   </li>
-                             // </Link>
+                             </Link>
                           ))}
                        </ul>
                    )}   
@@ -74,8 +70,7 @@ export default function Home() {
               <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
             </span>
           </a>
-        </footer>
-      
+        </footer>     
   
   </>   
   )
