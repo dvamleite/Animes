@@ -15,11 +15,12 @@ export default function PageInfo() {
     .then((response) =>{
       setAnimes(response)                    
     })   
-  })
+  })  
 
   return (
   <>
-  <Menu />
+  <Menu />    
+
   <div className="card-content">       
        {animes.data && (          
           <ul className='box-content'>

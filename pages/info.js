@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className={styles.container}>     
 
-      <main className={styles.main}>
+      <main className={styles.main}>        
 
       {animes.data && (
         <ul className='box-content'>
