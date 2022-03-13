@@ -41,3 +41,14 @@
     opacity: 1;
     right: 0;    
   }
+
+  @media only screen and (max-width: 600px){
+    .btn-controller{
+       position: fixed;
+       bottom: 0;
+    }
+
+    .btn-controller button{
+        width: 45%;          
+    }
+}

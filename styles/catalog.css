@@ -34,3 +34,21 @@
     text-align: center;
     font-size: 18px;      
 }
+
+
+@media only screen and (max-width: 600px){
+    .box-content{        
+        height: 100vh;
+        display: flex;       
+        justify-content: center;
+       }
+
+       .box-content img{    
+        width: 100%;            
+    }
+
+    .box-content li{
+        width: 90px;
+        margin-bottom: 1rem;         
+    }
+}

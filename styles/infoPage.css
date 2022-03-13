@@ -1,0 +1,45 @@
+.box-info li{
+    width: 100%;
+    display: flex;
+    margin: .5rem;
+    padding: .5rem;
+}
+
+.info-img{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-img img{
+    width: 70%;
+    height: 55%;
+    border-radius: 8px;
+}
+
+.info{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 600px){
+    .box-info li{
+        width: 100%;
+        display: flex;
+        align-items: center;
+       flex-direction: column;
+    }
+
+    .info-img{
+        width: 100%;       
+    }
+
+    .info{
+        width: 100%;
+       
+    }
+}

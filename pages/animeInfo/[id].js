@@ -13,7 +13,8 @@ export default function PageInfo() {
     fetch(`${api}${id}`)    
     .then((response) => response.json())
     .then((response) =>{
-      setAnimes(response)                    
+      setAnimes(response) 
+      console.log(response)                   
     })   
   })  
 
@@ -21,13 +22,19 @@ export default function PageInfo() {
   <>
   <Menu />    
 
-  <div className="card-content">       
+  <div className="info-content">       
        {animes.data && (          
-          <ul className='box-content'>
+          <ul className='box-info'>
             {animes.data.map((item) =>(              
               <li key={item.id}>
-                <img src={item.attributes.posterImage.small} />                
-                <span>{item.attributes.canonicalTitle}</span>
+               <section className='info-img'>
+                  <img src={item.attributes.posterImage.small} />                
+               </section>
+
+               <section className='info'>
+                  <h1>{item.attributes.canonicalTitle}</h1>
+                  <article>{item.attributes.description}</article>
+               </section>
               </li>             
             ))}
           </ul>                
