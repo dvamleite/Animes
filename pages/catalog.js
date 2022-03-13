@@ -24,7 +24,7 @@ export default function Catalog() {
        {animes.data && (          
           <ul className='box-content'>
             {animes.data.map((item) =>(
-              <Link key={item.id} href={`../animeInfo/${item.id} -1 `}>                
+              <Link key={item.id} href={`../animeInfo/${item.id-1}`}>                
                   <li key={item.id}>
                     <img src={item.attributes.posterImage.small} />                
                     <span>{item.attributes.canonicalTitle}</span>
