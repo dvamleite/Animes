@@ -50,13 +50,13 @@ export default function Home() {
              {info.data && (
                        <ul className="box-content">                    
                           {info.data.map((anime) =>(
-                              <Link href={`../animeInfo/${anime.id - 1}`}>
+                             // <Link href={`../animeInfo/${anime.id - 1}`}>
                                   <li key={anime.id}>                                   
                                       <img src={anime.attributes.posterImage.small} 
                                       alt={anime.attributes.canonicalTitle} />
                                       <h3>{anime.attributes.canonicalTitle}</h3>
                                   </li>
-                              </Link>
+                             // </Link>
                           ))}
                        </ul>
                    )}   

@@ -27,12 +27,12 @@ export default function Catalog() {
           
           <ul className='box-content'>
             {animes.data.map((item) =>(
-              <Link href={`../animeInfo/${item.id - 1}`}>                
+             // <Link href={`../animeInfo/${item.id} -1 `}>                
               <li key={item.id}>
                 <img src={item.attributes.posterImage.small} />                
                 <span>{item.attributes.canonicalTitle}</span>
               </li>
-              </Link> 
+             // </Link> 
             ))}
           </ul>
                 
