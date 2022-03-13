@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 import Menu from './components/menu'
 import Search from './components/search'
+import Link from 'next/link'
 
 let api = `https://kitsu.io/api/edge/anime?filter[text]=`;
 
@@ -36,24 +37,26 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Search 
-                className="boxtext"                 
-                value={text}                 
-                onChange={(search) => setText(search)}
-          />
+        <section className='search-content'>
+          <Search 
+                  className="boxtext"                 
+                  value={text}                 
+                  onChange={(search) => setText(search)}
+            />
+        </section>
 
-        <main className={styles.main}> 
+        <main className="card-content"> 
 
              {info.data && (
                        <ul className="box-content">                    
                           {info.data.map((anime) =>(
-                               <li key={anime.id}>
-                                   
-                                        <img src={anime.attributes.posterImage.small} 
-                                        alt={anime.attributes.canonicalTitle} />
-                                        <h3>{anime.attributes.canonicalTitle}</h3>                                       
-                                   
-                               </li>
+                              <Link href={`../animeInfo/${anime.id - 1}`}>
+                                  <li key={anime.id}>                                   
+                                      <img src={anime.attributes.posterImage.small} 
+                                      alt={anime.attributes.canonicalTitle} />
+                                      <h3>{anime.attributes.canonicalTitle}</h3>
+                                  </li>
+                              </Link>
                           ))}
                        </ul>
                    )}   

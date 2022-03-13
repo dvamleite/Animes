@@ -1,11 +1,11 @@
 .card-content{
     width: 100%;
-    
+    max-width: 1200px;
     display: flex;  
     align-items: center;
     justify-content: center;
 
-    margin: 1rem;
+    margin: auto;
     padding: .5rem;
 }
 
@@ -18,18 +18,19 @@
 .box-content img{    
     width: 200px;
     height: 200px;
+    border-radius: 5px;
 }
 
 .box-content li{
-    width: 250px;
+    width: 200px;
     list-style: none;  
-    margin: .5rem;
-    padding: .5rem;
+    margin: .1rem;
+    padding: .1rem;
     display: flex;
     flex-direction: column;
 }
 
 .box-content span{
     text-align: center;
-    font-size: min(22px, 10vw);      
+    font-size: 18px;      
 }
