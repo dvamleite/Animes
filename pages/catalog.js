@@ -49,8 +49,8 @@ export default function Catalog() {
       </div>
 
       <section className="btn-controller">
-                <button className='button'  onClick={Back}><span>Anterior</span></button>
-                <button className='button'  onClick={Next}><span>Proximo</span></button>
+                <button className='button' id="back"  onClick={Back}><span>Anterior</span></button>
+                <button className='button' id="next" onClick={Next}><span>Proximo</span></button>
       </section>
   </>   
   )

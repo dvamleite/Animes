@@ -15,22 +15,23 @@
     text-align: center;    
 }
 
+#next:hover{
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+#back:hover{
+    background-color: #f33e11; /* Green */
+    color: white;
+}
+
 .button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
     font-size: 15px;
-  }
-  
-  .button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
+  }  
   
   .button:hover span {
     padding-right: 25px;
@@ -38,5 +39,5 @@
   
   .button:hover span:after {
     opacity: 1;
-    right: 0;
+    right: 0;    
   }
