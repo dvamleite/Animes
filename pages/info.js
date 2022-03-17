@@ -1,11 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 const api = `https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0`
-
-//img = {item.attributes.posterImage}
 
 export default function Home() {
   const [animes, setAnimes] = useState({})

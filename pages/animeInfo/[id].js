@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Menu from '../components/menu'
 import { useRouter } from 'next/router'
+import Footer from '../components/footer/footer'
 
 const api = `https://kitsu.io/api/edge/anime?page[limit]=1&page[offset]=`
 
@@ -39,7 +40,9 @@ export default function PageInfo() {
             ))}
           </ul>                
         )}       
-      </div>  
+      </div> 
+
+      <Footer /> 
   </>   
   )
 }

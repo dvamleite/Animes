@@ -52,6 +52,7 @@ export default function Catalog() {
                 <button className='button' id="back"  onClick={Back}><span>Anterior</span></button>
                 <button className='button' id="next" onClick={Next}><span>Proximo</span></button>
       </section>
+
   </>   
   )
 }
