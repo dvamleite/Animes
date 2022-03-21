@@ -38,7 +38,9 @@ export default function Catalog() {
             {animes.data.map((item) =>(
               <Link key={item.id} href={`../animeInfo/${item.id-1}`}>                
                   <li key={item.id}>
-                    <img src={item.attributes.posterImage.small} />                
+                    <img src={item.attributes.posterImage.small} 
+                    alt={item.attributes.canonicalTitle}
+                    />                
                     <span>{item.attributes.canonicalTitle}</span>
                   </li>
               </Link> 

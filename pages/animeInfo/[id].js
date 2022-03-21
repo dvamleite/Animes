@@ -28,7 +28,9 @@ export default function PageInfo() {
             {animes.data.map((item) =>(              
               <li key={item.id}>
                <section className='info-img'>
-                  <img src={item.attributes.posterImage.small} />                
+                  <img src={item.attributes.posterImage.small} 
+                  alt={item.attributes.canonicalTitle}
+                  />                
                </section>
 
                <section className='info'>
