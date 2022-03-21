@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Menu from './components/menu'
+import Menu from '../menu'
 import Link from 'next/link'
 
 const api = `https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=`

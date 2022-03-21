@@ -1,3 +1,13 @@
+.info-content{
+    width: 100%;       
+    padding: 1rem;
+}
+
+.box-info{
+    width: 100%;
+    margin: auto;
+}
+
 .box-info li{
     width: 100%;
     display: flex;
@@ -39,7 +49,6 @@
     }
 
     .info{
-        width: 100%;
-       
+        width: 100%;       
     }
 }

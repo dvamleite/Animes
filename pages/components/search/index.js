@@ -1,4 +1,3 @@
-import React from "react";
 
 const SearchInput = ({value, onChange}) => {
 
@@ -12,9 +11,8 @@ const SearchInput = ({value, onChange}) => {
         placeholder="Search"       
         type="search"
         value={value}
-        onChange={handleChange}
+        onChange={handleChange}        
         />
-    )
-}
+    )}
 
 export default SearchInput;

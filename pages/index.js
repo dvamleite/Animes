@@ -6,12 +6,11 @@ import Link from 'next/link'
 
 let api = `https://kitsu.io/api/edge/anime?filter[text]=`;
 
-
 export default function Home() {
   const [text, setText] = useState('');
   const [info, setInfo] = useState({});
   
-  useEffect(() =>{
+    useEffect(() =>{
       if(text){
           console.log(text);
           fetch(`${api}${text}`).then((response) => response.json())
@@ -20,7 +19,7 @@ export default function Home() {
               console.log(response)                                          
           }) 
       }
-  },[text])
+  },[text]) 
 
   return (
   <>  
@@ -53,11 +52,8 @@ export default function Home() {
                              </Link>
                           ))}
                        </ul>
-                   )}   
-      
-        </main>
-
-      
+                   )}      
+        </main>      
   </>   
   )
 }

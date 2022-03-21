@@ -10,7 +10,7 @@ function Menu(){
             </li>
 
             <li>
-                <Link href="/catalog">
+                <Link href="../components/catalog">
                 <a>Catalog</a>
                 </Link>
             </li>
