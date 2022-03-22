@@ -1,20 +1,30 @@
-import { useEffect, useState } from 'react'
+import React from 'react'
 import Menu from '../menu'
 import Link from 'next/link'
 
 const api = `https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=`
 let numItens = 0
 
-export default function Catalog() {
-  const [animes, setAnimes] = useState({})
+export async function getStaticProps(context){
+    const animes = await fetch(`${api}${numItens}`)
+      .then((response) => {
+        if(response.ok){
+          return response.json()
+        }
+      })
+      .then((respon) =>{
+        return respon
+      })    
 
-  useEffect(() =>{
-    fetch(`${api}${numItens}`)
-    .then((response) => response.json())
-    .then((response) =>{
-      setAnimes(response)           
-    })   
-  })
+  return{
+    props:{
+      animes     
+    },
+  }
+}
+
+export default function Catalog(props) {
+ const { animes } = props
 
   function Back(){
     numItens = numItens -20
