@@ -15,7 +15,7 @@ export async function getStaticProps(context){
       .then((respon) =>{
         return respon
       })
-      
+
   return{
     props:{
       animes         
@@ -49,8 +49,8 @@ export default function Catalog(props) {
       </div>
 
       <section className="btn-controller">
-            <button className='button' id="back"  onClick={ Remove }><span>Anterior</span></button>
-            <button className='button' id="next" onClick={ Add }><span>Proximo</span></button>
+            <button className='button' id="back"  onClick="" ><span>Anterior</span></button>
+            <button className='button' id="next" onClick="" ><span>Proximo</span></button>
       </section>
 
   </>   
