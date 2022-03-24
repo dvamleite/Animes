@@ -14,29 +14,17 @@ export async function getStaticProps(context){
       })
       .then((respon) =>{
         return respon
-      })    
-
+      })
+      
   return{
     props:{
-      animes     
-    },
+      animes         
+    },    
   }
 }
 
 export default function Catalog(props) {
  const { animes } = props
-
-  function Back(){
-    numItens = numItens -20
-  }
-
-  function Next(){
-    numItens = numItens +20
-  }
-
-  if(numItens < 0){
-    numItens = 0
-  }
 
   return (
   <>
@@ -46,7 +34,7 @@ export default function Catalog(props) {
        {animes.data && (          
           <ul className='box-content'>
             {animes.data.map((item) =>(
-              <Link key={item.id} href={`../animeInfo/${item.id-1}`}>                
+              <Link key={item.id} href={`/animeInfo/${item.id-1}`}>                
                   <li key={item.id}>
                     <img src={item.attributes.posterImage.small} 
                     alt={item.attributes.canonicalTitle}
@@ -61,8 +49,8 @@ export default function Catalog(props) {
       </div>
 
       <section className="btn-controller">
-                <button className='button' id="back"  onClick={Back}><span>Anterior</span></button>
-                <button className='button' id="next" onClick={Next}><span>Proximo</span></button>
+            <button className='button' id="back"  onClick={ Remove }><span>Anterior</span></button>
+            <button className='button' id="next" onClick={ Add }><span>Proximo</span></button>
       </section>
 
   </>   
