@@ -1,31 +1,22 @@
-import React from 'react'
 import Menu from '../menu'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 
 const api = `https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=`
-let numItens = 0
 
-export async function getStaticProps(context){
-    const animes = await fetch(`${api}${numItens}`)
-      .then((response) => {
-        if(response.ok){
-          return response.json()
-        }
-      })
-      .then((respon) =>{
-        return respon
-      })
+export default function Catalog() {
+  const [animes, setAnimes] = useState({})
+  const [itensForPage, setItensForPage] = useState(0)  
 
-  return{
-    props:{
-      animes         
-    },    
-  }
-}
-
-export default function Catalog(props) {
- const { animes } = props
-
+  useEffect(() =>{
+    fetch(`${api}${itensForPage}`)    
+    .then((response) => response.json())
+    .then((response) =>{
+      setAnimes(response) 
+      console.log(response)                   
+    })   
+  })
+ 
   return (
   <>
   <Menu />
@@ -49,8 +40,8 @@ export default function Catalog(props) {
       </div>
 
       <section className="btn-controller">
-            <button className='button' id="back"  onClick="" ><span>Anterior</span></button>
-            <button className='button' id="next" onClick="" ><span>Proximo</span></button>
+            <button className='button' id="back"  onClick={() => setItensForPage(itensForPage - 20)}><span>Anterior</span></button>
+            <button className='button' id="next" onClick={() => setItensForPage(itensForPage + 20)} ><span>Proximo</span></button>
       </section>
 
   </>   

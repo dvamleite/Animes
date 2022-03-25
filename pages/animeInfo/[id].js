@@ -13,8 +13,7 @@ export default function PageInfo() {
     fetch(`${api}${id}`)    
     .then((response) => response.json())
     .then((response) =>{
-      setAnimes(response) 
-      console.log(response)                   
+      setAnimes(response)                        
     })   
   })  
 
