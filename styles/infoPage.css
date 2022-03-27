@@ -6,34 +6,56 @@
 .box-info{
     width: 100%;
     margin: auto;
+    padding: .5rem;
 }
 
 .box-info li{
     width: 100%;
     display: flex;
-    margin: .5rem;
+    flex-direction: column;  
     padding: .5rem;
 }
 
-.info-img{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.info-img img{
-    width: 70%;
-    height: 55%;
-    border-radius: 8px;
+.title{
+    width: 100%;
+    text-align: center;    
 }
 
 .info{
-    width: 50%;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-between;    
+} 
+
+.info img{    
+    width: 70%;
+    height: 55%;
+    border-radius: 8px;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.contentIf{
+    width: 100%;
+    display: flex;  
+    text-align: center;  
+}
+
+.dates{    
+    display: flex;
+    flex-direction: column;       
+}
+
+.ep{
+    display: flex;
+    flex-direction: column;       
+}
+
+.trailers{
+    width: 100%;
+    margin: auto;
+    text-align: center;
 }
 
 @media only screen and (max-width: 600px){
@@ -44,11 +66,22 @@
        flex-direction: column;
     }
 
-    .info-img{
-        width: 100%;       
+    .info img{
+        width: 100%;
+        margin: 1rem;       
     }
 
     .info{
-        width: 100%;       
+        width: 100%;
+        display: flex;
+        flex-direction: column;    
+    } 
+
+    .contentIf{
+    flex-direction: column;  
+    }
+
+    .trailers iframe{
+        width: 98%;       
     }
 }

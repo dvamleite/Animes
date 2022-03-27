@@ -3,10 +3,11 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 const api = `https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=`
+var numItens = 100
 
-export default function Catalog() {
+export default  function Catalog(props) {
   const [animes, setAnimes] = useState({})
-  const [itensForPage, setItensForPage] = useState(0)  
+  const [itensForPage, setItensForPage] = useState(0) 
 
   useEffect(() =>{
     fetch(`${api}${itensForPage}`)    
@@ -40,7 +41,7 @@ export default function Catalog() {
       </div>
 
       <section className="btn-controller">
-            <button className='button' id="back"  onClick={() => setItensForPage(itensForPage - 20)}><span>Anterior</span></button>
+            <button className='button' id="back" disabled ={ itensForPage <= 0 }  onClick={() => setItensForPage(itensForPage - 20)}><span>Anterior</span></button>
             <button className='button' id="next" onClick={() => setItensForPage(itensForPage + 20)} ><span>Proximo</span></button>
       </section>
 

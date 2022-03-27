@@ -15,15 +15,6 @@
     text-align: center;    
 }
 
-#next:hover{
-    background-color: #4CAF50; /* Green */
-    color: white;
-}
-
-#back:hover{
-    background-color: #f33e11; /* Green */
-    color: white;
-}
 
 .button span {
     cursor: pointer;
