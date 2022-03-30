@@ -7,15 +7,23 @@ const api = `https://kitsu.io/api/edge/anime?page[limit]=1&page[offset]=`
 export default function PageInfo() {
   const [animes, setAnimes] = useState({})  
   const router = useRouter()  
-  let id = router.query.id
+  let id = router.query.id 
 
   useEffect(() =>{
     fetch(`${api}${id}`)    
     .then((response) => response.json())
     .then((response) =>{
-      setAnimes(response)                        
+      setAnimes(response)                             
     })   
-  })  
+  }) 
+
+  useEffect(() =>{AddFavorites()},[])
+  
+    function AddFavorites(){           
+      if(id){ 
+          console.log("add favorites")         
+      }
+    } 
 
   return (
   <>
@@ -54,26 +62,32 @@ export default function PageInfo() {
                 </li>
             </section> 
 
+            <div className='btn-content'>
+                <span>Add To Favorites List</span>
+                <button className='btn-add'
+                onClick={ AddFavorites }                              
+                >ADD</button>
+            </div>
+
             <li className='trailers'>
               <h2>Trailer</h2>
             <iframe 
-            width="560" 
-            height="315" 
-            src={`https://www.youtube.com/embed/${item.attributes.youtubeVideoId}`}
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="
-            accelerometer; 
-            autoplay; 
-            clipboard-write;
-             encrypted-media;
+              width="560" 
+              height="315" 
+              src={`https://www.youtube.com/embed/${item.attributes.youtubeVideoId}`}
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="
+              accelerometer; 
+              autoplay; 
+              clipboard-write;
+              encrypted-media;
               gyroscope;
-               picture-in-picture
-               " allowfullscreen></iframe>
+              picture-in-picture"
+              allowFullScreen>
+            </iframe>
             </li>
-
-          </li>              
-              
+          </li>             
             ))}
           </ul>                
         )}       

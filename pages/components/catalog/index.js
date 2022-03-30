@@ -3,20 +3,24 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 const api = `https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=`
-var numItens = 100
 
 export default  function Catalog(props) {
   const [animes, setAnimes] = useState({})
-  const [itensForPage, setItensForPage] = useState(0) 
+  const [itensForPage, setItensForPage] = useState(0)  
 
-  useEffect(() =>{
-    fetch(`${api}${itensForPage}`)    
-    .then((response) => response.json())
-    .then((response) =>{
-      setAnimes(response) 
-      console.log(response)                   
-    })   
-  })
+  try {
+
+    useEffect(() =>{
+      fetch(`${api}${itensForPage}`)    
+      .then((response) => response.json())
+      .then((response) =>{
+        setAnimes(response)                           
+      })   
+    })
+    
+  } catch (error) {
+    console.log(error)
+  }
  
   return (
   <>
@@ -30,6 +34,7 @@ export default  function Catalog(props) {
                   <li key={item.id}>
                     <img src={item.attributes.posterImage.small} 
                     alt={item.attributes.canonicalTitle}
+                    
                     />                
                     <span>{item.attributes.canonicalTitle}</span>
                   </li>

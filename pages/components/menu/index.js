@@ -16,8 +16,8 @@ function Menu(){
             </li>
 
             <li>
-                <Link href="/#about">
-                <a>About</a>
+                <Link href="../components/favorites">
+                <a>Favorites</a>
                 </Link>
             </li>
 
