@@ -9,8 +9,7 @@ export default function SearchPage() {
   const [info, setInfo] = useState({})
   
     useEffect(() =>{
-      if(text){
-          console.log(text);
+      if(text){          
           fetch(`${api}${text}`).then((response) => response.json())
           .then((response) =>{
               setInfo(response)                                                       
