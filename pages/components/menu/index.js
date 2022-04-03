@@ -13,13 +13,7 @@ function Menu(){
                 <Link href="../components/catalog">
                 <a>Catalog</a>
                 </Link>
-            </li>
-
-            <li>
-                <Link href="../components/favorites">
-                <a>Favorites</a>
-                </Link>
-            </li>
+            </li>        
 
         </ul>
     )
