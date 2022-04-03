@@ -9,25 +9,28 @@ export default function PageInfo() {
   const router = useRouter()  
   let id = router.query.id 
 
+  const [value, setValue] = useState([])  
+  
   useEffect(() =>{
     fetch(`${api}${id}`)    
     .then((response) => response.json())
     .then((response) =>{
       setAnimes(response)                             
     })   
-  }) 
+  })
 
-  useEffect(() =>{AddFavorites()},[])
-  
-    function AddFavorites(){           
-      if(id){ 
-          console.log("add favorites")         
-      }
-    } 
+  function AddFavorites(){   
+    SavedLocalStorage()   
+  }     
+
+    function SavedLocalStorage(){
+      setValue([id])
+      localStorage.setItem('lista_Salva',id)
+    }
 
   return (
   <>
-  <Menu />    
+  <Menu />   
 
   <div className="info-content">       
        {animes.data && (          
@@ -65,7 +68,7 @@ export default function PageInfo() {
             <div className='btn-content'>
                 <span>Add To Favorites List</span>
                 <button className='btn-add'
-                onClick={ AddFavorites }                              
+                onClick={AddFavorites}                              
                 >ADD</button>
             </div>
 

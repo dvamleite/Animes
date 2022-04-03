@@ -4,26 +4,22 @@ import { useRouter } from 'next/router'
 
 const api = `https://kitsu.io/api/edge/anime?page[limit]=`
 
-
 //armazenar aki os id dos favoritos
-const idf = [20,40,56,94,88]
+var idf = [localStorage.getItem('lista_Salva')]
 
 export default function Favorites() {
   const [animes, setAnimes] = useState({})  
   const router = useRouter()  
-  let id = router.query.id
-
-  console.log(idf.length)
+  let id = router.query.id 
 
   useEffect(() =>{
     fetch(`${api}${idf.length}&page[offset]=${idf}`)    
     .then((response) => response.json())
     .then((response) =>{
-      setAnimes(response)
-      console.log(idf)                        
+      setAnimes(response)            
     })   
-  },[idf])  
-
+  },[idf]) 
+  
   return (
   <>
   <Menu />    
